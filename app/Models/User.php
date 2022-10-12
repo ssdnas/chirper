@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Define one to many relationship.
+     */
+    public function chirps()
+    {
+        return $this->hasMany(Chirp::class);
+    }
 }
